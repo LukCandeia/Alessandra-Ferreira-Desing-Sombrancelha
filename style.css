@@ -371,18 +371,14 @@ h3 {
 }
 
 .services-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.1rem;
   margin-top: 2.2rem;
   padding: 0.2rem 1.4rem 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-padding-left: 1.4rem;
 }
 .service-card {
-  flex: 0 0 78%;
-  scroll-snap-align: start;
+  scroll-snap-align: none;
   padding: 1.9rem;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.35);
@@ -419,19 +415,15 @@ h3 {
 }
 
 @media (min-width: 640px) {
-  .service-card {
-    flex: 0 0 46%;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.2rem 1.4rem 1rem;
   }
 }
 @media (min-width: 1000px) {
   .services-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    overflow-x: visible;
     padding: 0.2rem 0 1rem;
-  }
-  .service-card {
-    flex: none;
   }
 }
 
@@ -701,11 +693,9 @@ h3 {
 /* Chips de serviço — multi-seleção, scroll horizontal */
 .chip-scroller {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
-  overflow-x: auto;
-  padding: 0.2rem 0.1rem 0.5rem;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
+  padding: 0.2rem 0.1rem 0.3rem;
 }
 .chip {
   flex: 0 0 auto;
@@ -787,7 +777,6 @@ h3 {
   border-radius: 999px;
 }
 @media (min-width: 640px) {
-  .chip-scroller,
   .day-scroller {
     flex-wrap: wrap;
     overflow-x: visible;
