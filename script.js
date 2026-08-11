@@ -84,7 +84,7 @@ function validateBooking(data) {
 
 function buildWhatsappMessage({ nomeCompleto, servicosDesejados, diaSemana }) {
   return [
-    "Olá! Gostaria de agendar um horário. 💛",
+    "Olá! Gostaria de agendar um horário.",
     "",
     `*Nome:* ${nomeCompleto}`,
     `*Serviços:* ${servicosDesejados}`,
@@ -120,6 +120,16 @@ bookingForm.addEventListener("submit", (e) => {
 document
   .getElementById("nomeCompleto")
   .addEventListener("input", () => setFieldError("nomeCompleto", false));
+
+// ==== HEADER: sombra suave ao rolar ====
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+  const toggleHeaderShadow = () => {
+    siteHeader.classList.toggle("scrolled", window.scrollY > 12);
+  };
+  toggleHeaderShadow();
+  window.addEventListener("scroll", toggleHeaderShadow, { passive: true });
+}
 
 // ==== ANIMAÇÃO: REVEAL AO ROLAR ====
 const revealEls = document.querySelectorAll(".reveal");
