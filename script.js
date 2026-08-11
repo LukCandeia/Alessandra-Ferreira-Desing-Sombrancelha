@@ -1,5 +1,5 @@
 // ==== CONFIG ====
-const WHATSAPP_NUMBER = "5531988378504"; // <-- ALTERE AQUI: número com DDI+DDD, só números
+const WHATSAPP_NUMBER = "5531900000000"; // <-- ALTERE AQUI: número com DDI+DDD, só números
 
 // ==== MENU MOBILE ====
 const menuToggle = document.getElementById("menuToggle");
@@ -84,7 +84,7 @@ function validateBooking(data) {
 
 function buildWhatsappMessage({ nomeCompleto, servicosDesejados, diaSemana }) {
   return [
-    "Olá! Gostaria de agendar um horário.",
+    "Olá! Gostaria de agendar um horário. 💛",
     "",
     `*Nome:* ${nomeCompleto}`,
     `*Serviços:* ${servicosDesejados}`,
