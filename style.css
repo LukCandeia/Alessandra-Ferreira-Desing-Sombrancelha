@@ -20,8 +20,26 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  position: relative;
   background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image:
     radial-gradient(
       circle at 15% 8%,
@@ -38,12 +56,6 @@ body {
       rgba(252, 228, 236, 0.4),
       transparent 45%
     );
-  background-attachment: fixed;
-  color: var(--text);
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -440,6 +452,7 @@ h3 {
   overflow: hidden;
   background: var(--green);
   box-shadow: 0 14px 30px -18px rgba(45, 45, 45, 0.18);
+  cursor: zoom-in;
 }
 .gallery-item img {
   width: 100%;
@@ -478,6 +491,55 @@ h3 {
   }
 }
 
+/* Lightbox da galeria */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem;
+  background: rgba(20, 18, 16, 0.86);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease);
+}
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-img {
+  max-width: min(92vw, 720px);
+  max-height: 82vh;
+  width: auto;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--ease);
+}
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
 /* Location — mobile-first, single column */
 .location {
   display: flex;
@@ -500,8 +562,69 @@ h3 {
   color: var(--gold-deep);
   font-weight: 600;
 }
+
+/* Cartão de horário de funcionamento */
+.hours-card {
+  margin: 1.2rem 0 1.4rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(176, 141, 87, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.hours-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.hours-head svg {
+  flex: none;
+  color: var(--gold-deep);
+}
+.hours-head strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+.hours-range {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin-bottom: 0.9rem;
+}
+.hours-days {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.day-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.55rem;
+  border-radius: 8px;
+  background: rgba(232, 245, 233, 0.55);
+  color: var(--gold-deep);
+  border: 1px solid rgba(176, 141, 87, 0.25);
+}
+.day-pill.closed {
+  background: transparent;
+  color: #b3ada5;
+  border-color: rgba(45, 45, 45, 0.08);
+  text-decoration: line-through;
+}
 .location-map iframe {
   border-radius: var(--radius);
+}
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-deep);
+  border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+  padding-bottom: 2px;
 }
 @media (min-width: 900px) {
   .location {
@@ -600,6 +723,8 @@ h3 {
   -webkit-backdrop-filter: blur(14px);
   border-top: 1px solid rgba(176, 141, 87, 0.18);
   z-index: 90;
+  transform: translateZ(0);
+  will-change: transform;
 }
 @media (min-width: 900px) {
   .sticky-cta {
