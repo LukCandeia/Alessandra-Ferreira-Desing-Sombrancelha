@@ -1,5 +1,5 @@
 // ==== CONFIG ====
-const WHATSAPP_NUMBER = "5531900000000"; // <-- ALTERE AQUI: número com DDI+DDD, só números
+const WHATSAPP_NUMBER = "55319883785904"; // <-- ALTERE AQUI: número com DDI+DDD, só números
 
 // ==== MENU MOBILE ====
 const menuToggle = document.getElementById("menuToggle");
