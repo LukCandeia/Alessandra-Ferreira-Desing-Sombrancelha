@@ -65,20 +65,29 @@ function setFieldError(fieldId, hasError) {
 
 function validateBooking(data) {
   let valid = true;
-  ["nomeCompleto", "servicoDesejado", "diaSemana"].forEach((id) => {
-    const isEmpty = !data[id] || data[id].trim() === "";
-    setFieldError(id, isEmpty);
-    if (isEmpty) valid = false;
-  });
+
+  const nomeEmpty = !data.nomeCompleto || data.nomeCompleto.trim() === "";
+  setFieldError("nomeCompleto", nomeEmpty);
+  if (nomeEmpty) valid = false;
+
+  const servicosEmpty =
+    !data.servicosDesejados || data.servicosDesejados.trim() === "";
+  setFieldError("servicosDesejados", servicosEmpty);
+  if (servicosEmpty) valid = false;
+
+  const diaEmpty = !data.diaSemana || data.diaSemana.trim() === "";
+  setFieldError("diaSemana", diaEmpty);
+  if (diaEmpty) valid = false;
+
   return valid;
 }
 
-function buildWhatsappMessage({ nomeCompleto, servicoDesejado, diaSemana }) {
+function buildWhatsappMessage({ nomeCompleto, servicosDesejados, diaSemana }) {
   return [
     "Olá! Gostaria de agendar um horário. 💛",
     "",
     `*Nome:* ${nomeCompleto}`,
-    `*Serviço:* ${servicoDesejado}`,
+    `*Serviços:* ${servicosDesejados}`,
     `*Dia preferido:* ${diaSemana}`,
     "",
     "Quais são os horários disponíveis?",
@@ -90,7 +99,7 @@ bookingForm.addEventListener("submit", (e) => {
 
   const data = {
     nomeCompleto: document.getElementById("nomeCompleto").value,
-    servicoDesejado: document.getElementById("servicoDesejado").value,
+    servicosDesejados: document.getElementById("servicosDesejados").value,
     diaSemana: document.getElementById("diaSemana").value,
   };
 
@@ -107,12 +116,92 @@ bookingForm.addEventListener("submit", (e) => {
   }, 350);
 });
 
-// remove alerta de erro ao digitar/selecionar
-["nomeCompleto", "servicoDesejado", "diaSemana"].forEach((id) => {
-  document
-    .getElementById(id)
-    .addEventListener("input", () => setFieldError(id, false));
-  document
-    .getElementById(id)
-    .addEventListener("change", () => setFieldError(id, false));
+// remove alerta de erro ao digitar
+document
+  .getElementById("nomeCompleto")
+  .addEventListener("input", () => setFieldError("nomeCompleto", false));
+
+// ==== ANIMAÇÃO: REVEAL AO ROLAR ====
+const revealEls = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add("is-visible"));
+}
+
+// ==== SELEÇÃO DE SERVIÇOS (MÚLTIPLA) ====
+const serviceCards = document.querySelectorAll(".service-card");
+const serviceChips = document.querySelectorAll(".chip");
+const servicosHidden = document.getElementById("servicosDesejados");
+const selectedServices = new Set();
+
+function syncServiceUI() {
+  serviceCards.forEach((card) => {
+    const name = card.querySelector("h3").textContent.trim();
+    card.classList.toggle("selected", selectedServices.has(name));
+  });
+  serviceChips.forEach((chip) => {
+    chip.classList.toggle(
+      "selected",
+      selectedServices.has(chip.dataset.service),
+    );
+  });
+  servicosHidden.value = Array.from(selectedServices).join(", ");
+  if (selectedServices.size > 0) setFieldError("servicosDesejados", false);
+}
+
+function toggleService(name, { scrollToForm = false } = {}) {
+  const wasEmpty = selectedServices.size === 0;
+  if (selectedServices.has(name)) {
+    selectedServices.delete(name);
+  } else {
+    selectedServices.add(name);
+  }
+  syncServiceUI();
+
+  if (scrollToForm && wasEmpty && selectedServices.size > 0) {
+    const bookingSection = document.getElementById("contato");
+    if (bookingSection) {
+      setTimeout(() => {
+        bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 250);
+    }
+  }
+}
+
+serviceCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const name = card.querySelector("h3").textContent.trim();
+    toggleService(name, { scrollToForm: true });
+  });
+});
+
+serviceChips.forEach((chip) => {
+  chip.addEventListener("click", () => toggleService(chip.dataset.service));
+});
+
+// ==== SELEÇÃO DE DIA (CARROSSEL) ====
+const dayChips = document.querySelectorAll(".day-chip");
+const diaSemanaHidden = document.getElementById("diaSemana");
+
+dayChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    dayChips.forEach((c) => c.classList.remove("selected"));
+    chip.classList.add("selected");
+    diaSemanaHidden.value = chip.dataset.day;
+    setFieldError("diaSemana", false);
+  });
 });

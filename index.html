@@ -1,209 +1,441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio de Sobrancelhas & Estética | Design de Sobrancelhas em Pedro Leopoldo</title>
-<meta name="description" content="Design de sobrancelhas, micropigmentação e estética avançada em Pedro Leopoldo - MG. Agende seu horário pelo WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <a href="#inicio" class="logo">Camila<span class="logo-accent">.</span>Estética</a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="main-nav" id="mainNav">
-    <a href="#inicio">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
-
-<main>
-
-  <section id="inicio" class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow-label">Design de sobrancelhas & estética avançada</p>
-      <h1>O olhar certo muda <em>tudo</em> o que o rosto conta.</h1>
-      <p class="hero-sub">Fios desenhados a mão, simetria estudada e resultados que envelhecem bem com você. Atendimento particular em Pedro Leopoldo - MG.</p>
-      <a href="#contato" class="btn btn-primary">Agendar meu horário</a>
-    </div>
-    <div class="hero-media">
-      <img src="images/antes-depois-07.jpg" alt="Resultado de design de sobrancelhas, antes e depois" class="hero-img-main">
-      <div class="hero-arc" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <section id="sobre" class="about">
-    <div class="about-media">
-      <img src="images/profissional.jpg" alt="Foto da profissional de estética" class="about-photo">
-    </div>
-    <div class="about-copy">
-      <p class="eyebrow-label">Quem cuida do seu olhar</p>
-      <h2>Cada sobrancelha tem uma lógica. Eu leio essa lógica antes de tocar num fio.</h2>
-      <p>Mais de uma década dedicada à harmonização facial através do design de sobrancelhas. Trabalho com técnicas de fio a fio, micropigmentação e remoção a laser — sempre respeitando o formato natural do seu rosto, nunca impondo um padrão pronto.</p>
-      <p>Cada atendimento é individual, com material esterilizado e avaliação prévia da pele e do crescimento capilar.</p>
-    </div>
-  </section>
-
-  <section id="servicos" class="services">
-    <p class="eyebrow-label center">O que ofereço</p>
-    <h2 class="section-title center">Serviços & Valores</h2>
-
-    <div class="services-grid hide-scrollbar">
-      <article class="service-card">
-        <h3>Designer de Sobrancelhas</h3>
-        <p>Mapeamento facial personalizado e remoção fio a fio, respeitando o crescimento natural e a simetria do seu olhar.</p>
-        <span class="price">R$ 40,00</span>
-      </article>
-
-      <article class="service-card">
-        <h3>Designer com Henna</h3>
-        <p>O mesmo cuidado do design tradicional, finalizado com henna para mais preenchimento, definição e durabilidade.</p>
-        <span class="price">R$ 50,00</span>
-      </article>
-
-      <article class="service-card service-featured">
-        <h3>Micropigmentação de Sobrancelhas</h3>
-        <p>Técnica fio a fio que devolve volume e simetria de forma natural, feita sob medida para o seu formato de rosto. Pigmentos de longa duração, com cicatrização acompanhada de perto.</p>
-        <span class="price">R$ 450,00</span>
-      </article>
-
-      <article class="service-card service-featured">
-        <h3>Micropigmentação Labial</h3>
-        <p>Realce do contorno e da cor natural dos lábios, com técnica delicada e pigmentos de longa duração.</p>
-        <span class="price">R$ 400,00</span>
-      </article>
-
-      <article class="service-card">
-        <h3>Sessão de Remoção a Laser</h3>
-        <p>Remoção segura e gradual de pigmentações ou tatuagens antigas, preparando a pele para um novo desenho quando desejar.</p>
-        <span class="price">R$ 150,00</span>
-      </article>
-    </div>
-  </section>
-
-  <section id="galeria" class="gallery">
-    <p class="eyebrow-label center">Resultados reais</p>
-    <h2 class="section-title center">Antes e Depois</h2>
-    <div class="gallery-grid hide-scrollbar" id="galleryGrid">
-      <figure class="gallery-item" data-full="images/antes-depois-01.jpg"><img src="images/antes-depois-01.jpg" alt="Antes e depois de design de sobrancelhas 1"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-02.jpg"><img src="images/antes-depois-02.jpg" alt="Antes e depois de micropigmentação labial 2"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-03.jpg"><img src="images/antes-depois-03.jpg" alt="Antes e depois de micropigmentação labial 3"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-04.jpg"><img src="images/antes-depois-04.jpg" alt="Antes e depois de design de sobrancelhas 4"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-05.jpg"><img src="images/antes-depois-05.jpg" alt="Antes e depois de design de sobrancelhas 5"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-06.jpg"><img src="images/antes-depois-06.jpg" alt="Antes e depois de design de sobrancelhas 6"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-08.jpg"><img src="images/antes-depois-08.jpg" alt="Antes e depois de design de sobrancelhas 8"><figcaption>Antes e Depois</figcaption></figure>
-      <figure class="gallery-item" data-full="images/antes-depois-09.jpg"><img src="images/antes-depois-09.jpg" alt="Antes e depois de design de sobrancelhas 9"><figcaption>Antes e Depois</figcaption></figure>
-    </div>
-  </section>
-
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar imagem">&times;</button>
-    <img src="" alt="" class="lightbox-img" id="lightboxImg">
-  </div>
-
-  <section id="localizacao" class="location">
-    <div class="location-info">
-      <p class="eyebrow-label">Onde estou</p>
-      <h2 class="section-title">Localização & Horários</h2>
-      <p class="location-item"><strong>Endereço:</strong> Rua Alfredo Barbosa, 164 — Bairro Felipe Cláudio, Pedro Leopoldo - MG</p>
-
-      <div class="hours-card">
-        <div class="hours-head">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <strong>Horário de atendimento</strong>
-        </div>
-        <p class="hours-range">09h às 18h</p>
-        <div class="hours-days">
-          <span class="day-pill closed">Dom</span>
-          <span class="day-pill closed">Seg</span>
-          <span class="day-pill">Ter</span>
-          <span class="day-pill">Qua</span>
-          <span class="day-pill">Qui</span>
-          <span class="day-pill">Sex</span>
-          <span class="day-pill">Sáb</span>
-        </div>
-      </div>
-
-      <p class="location-item location-tag">Fácil acesso, com vaga para deixar o carro por perto</p>
-    </div>
-    <div class="location-map">
-      <iframe
-        title="Mapa do studio em Pedro Leopoldo"
-        src="https://maps.google.com/maps?q=Rua+Alfredo+Barbosa%2C+164+-+Bairro+Felipe+Cl%C3%A1udio%2C+Pedro+Leopoldo+-+MG&t=&z=16&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="320" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Alfredo+Barbosa%2C+164+-+Bairro+Felipe+Cl%C3%A1udio%2C+Pedro+Leopoldo+-+MG" target="_blank" rel="noopener">
-        Ver rota no Google Maps →
-      </a>
-    </div>
-  </section>
-
-  <section id="contato" class="booking">
-    <p class="eyebrow-label center">Vamos agendar</p>
-    <h2 class="section-title center">Consulte seu horário</h2>
-    <p class="booking-sub center">Preencha os dados abaixo. Você será direcionado ao WhatsApp com sua mensagem pronta.</p>
-
-    <form id="bookingForm" class="booking-form" novalidate>
-      <div class="form-group">
-        <label for="nomeCompleto">Nome completo</label>
-        <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Seu nome">
-        <span class="form-alert" data-alert-for="nomeCompleto">Preencha seu nome completo.</span>
-      </div>
-
-      <div class="form-group">
-        <label for="servicoDesejado">Serviço desejado</label>
-        <select id="servicoDesejado" name="servicoDesejado">
-          <option value="" disabled selected>Selecione um serviço</option>
-          <option value="Designer de Sobrancelhas">Designer de Sobrancelhas</option>
-          <option value="Designer com Henna">Designer com Henna</option>
-          <option value="Micropigmentação de Sobrancelhas">Micropigmentação de Sobrancelhas</option>
-          <option value="Micropigmentação Labial">Micropigmentação Labial</option>
-          <option value="Sessão de Remoção a Laser">Sessão de Remoção a Laser</option>
-        </select>
-        <span class="form-alert" data-alert-for="servicoDesejado">Escolha um serviço.</span>
-      </div>
-
-      <div class="form-group">
-        <label for="diaSemana">Dia da semana</label>
-        <select id="diaSemana" name="diaSemana">
-          <option value="" disabled selected>Selecione um dia</option>
-          <option value="Terça">Terça</option>
-          <option value="Quarta">Quarta</option>
-          <option value="Quinta">Quinta</option>
-          <option value="Sexta">Sexta</option>
-          <option value="Sábado">Sábado</option>
-        </select>
-        <span class="form-alert" data-alert-for="diaSemana">Escolha um dia.</span>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-block" id="submitBooking">
-        <span class="btn-text">Consultar Horários no WhatsApp</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Studio de Sobrancelhas & Estética | Design de Sobrancelhas em Pedro
+      Leopoldo
+    </title>
+    <meta
+      name="description"
+      content="Design de sobrancelhas, micropigmentação e estética avançada em Pedro Leopoldo - MG. Agende seu horário pelo WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="#inicio" class="logo"
+        >Camila<span class="logo-accent">.</span>Estética</a
+      >
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
-    </form>
-  </section>
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
 
-</main>
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow-label">
+            Design de sobrancelhas & estética avançada
+          </p>
+          <h1>O olhar certo muda <em>tudo</em> o que o rosto conta.</h1>
+          <p class="hero-sub">
+            Fios desenhados a mão, simetria estudada e resultados que envelhecem
+            bem com você. Atendimento particular em Pedro Leopoldo - MG.
+          </p>
+          <a href="#contato" class="btn btn-primary">Agendar meu horário</a>
+        </div>
+        <div class="hero-media">
+          <img
+            src="images/antes-depois-07.jpg"
+            alt="Resultado de design de sobrancelhas, antes e depois"
+            class="hero-img-main"
+          />
+          <div class="hero-arc" aria-hidden="true"></div>
+        </div>
+      </section>
 
-<footer class="site-footer">
-  <p>Camila Estética — Rua Alfredo Barbosa, 164, Pedro Leopoldo - MG</p>
-  <p class="footer-fine">Terça a Sábado · 09h às 18h</p>
-</footer>
+      <section id="sobre" class="about">
+        <div class="about-media reveal">
+          <img
+            src="images/profissional.jpg"
+            alt="Foto da profissional de estética"
+            class="about-photo"
+          />
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow-label">Quem cuida do seu olhar</p>
+          <h2>
+            Cada sobrancelha tem uma lógica. Eu leio essa lógica antes de tocar
+            num fio.
+          </h2>
+          <p>
+            Mais de uma década dedicada à harmonização facial através do design
+            de sobrancelhas. Trabalho com técnicas de fio a fio,
+            micropigmentação e remoção a laser — sempre respeitando o formato
+            natural do seu rosto, nunca impondo um padrão pronto.
+          </p>
+          <p>
+            Cada atendimento é individual, com material esterilizado e avaliação
+            prévia da pele e do crescimento capilar.
+          </p>
+        </div>
+      </section>
 
-<div class="sticky-cta" id="stickyCta">
-  <a href="#contato" class="btn btn-primary btn-block">Agendar meu horário</a>
-</div>
+      <section id="servicos" class="services">
+        <p class="eyebrow-label center">O que ofereço</p>
+        <h2 class="section-title center">Serviços & Valores</h2>
 
-<script src="script.js"></script>
-</body>
+        <div class="services-grid hide-scrollbar">
+          <article class="service-card reveal">
+            <h3>Designer de Sobrancelhas</h3>
+            <p>
+              Mapeamento facial personalizado e remoção fio a fio, respeitando o
+              crescimento natural e a simetria do seu olhar.
+            </p>
+            <span class="price">R$ 40,00</span>
+          </article>
+
+          <article class="service-card reveal">
+            <h3>Designer com Henna</h3>
+            <p>
+              O mesmo cuidado do design tradicional, finalizado com henna para
+              mais preenchimento, definição e durabilidade.
+            </p>
+            <span class="price">R$ 50,00</span>
+          </article>
+
+          <article class="service-card service-featured reveal">
+            <h3>Micropigmentação de Sobrancelhas</h3>
+            <p>
+              Técnica fio a fio que devolve volume e simetria de forma natural,
+              feita sob medida para o seu formato de rosto. Pigmentos de longa
+              duração, com cicatrização acompanhada de perto.
+            </p>
+            <span class="price">R$ 450,00</span>
+          </article>
+
+          <article class="service-card service-featured reveal">
+            <h3>Micropigmentação Labial</h3>
+            <p>
+              Realce do contorno e da cor natural dos lábios, com técnica
+              delicada e pigmentos de longa duração.
+            </p>
+            <span class="price">R$ 400,00</span>
+          </article>
+
+          <article class="service-card reveal">
+            <h3>Sessão de Remoção a Laser</h3>
+            <p>
+              Remoção segura e gradual de pigmentações ou tatuagens antigas,
+              preparando a pele para um novo desenho quando desejar.
+            </p>
+            <span class="price">R$ 150,00</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="galeria" class="gallery">
+        <p class="eyebrow-label center">Resultados reais</p>
+        <h2 class="section-title center">Antes e Depois</h2>
+        <div class="gallery-grid hide-scrollbar" id="galleryGrid">
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-01.jpg"
+          >
+            <img
+              src="images/antes-depois-01.jpg"
+              alt="Antes e depois de design de sobrancelhas 1"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-02.jpg"
+          >
+            <img
+              src="images/antes-depois-02.jpg"
+              alt="Antes e depois de micropigmentação labial 2"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-03.jpg"
+          >
+            <img
+              src="images/antes-depois-03.jpg"
+              alt="Antes e depois de micropigmentação labial 3"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-04.jpg"
+          >
+            <img
+              src="images/antes-depois-04.jpg"
+              alt="Antes e depois de design de sobrancelhas 4"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-05.jpg"
+          >
+            <img
+              src="images/antes-depois-05.jpg"
+              alt="Antes e depois de design de sobrancelhas 5"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-06.jpg"
+          >
+            <img
+              src="images/antes-depois-06.jpg"
+              alt="Antes e depois de design de sobrancelhas 6"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-08.jpg"
+          >
+            <img
+              src="images/antes-depois-08.jpg"
+              alt="Antes e depois de design de sobrancelhas 8"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+          <figure
+            class="gallery-item reveal"
+            data-full="images/antes-depois-09.jpg"
+          >
+            <img
+              src="images/antes-depois-09.jpg"
+              alt="Antes e depois de design de sobrancelhas 9"
+            />
+            <figcaption>Antes e Depois</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="lightbox" id="lightbox">
+        <button
+          class="lightbox-close"
+          id="lightboxClose"
+          aria-label="Fechar imagem"
+        >
+          &times;
+        </button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+      </div>
+
+      <section id="localizacao" class="location">
+        <div class="location-info reveal">
+          <p class="eyebrow-label">Onde estou</p>
+          <h2 class="section-title">Localização & Horários</h2>
+          <p class="location-item">
+            <strong>Endereço:</strong> Rua Alfredo Barbosa, 164 — Bairro Felipe
+            Cláudio, Pedro Leopoldo - MG
+          </p>
+
+          <div class="hours-card">
+            <div class="hours-head">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M12 7v5l3.2 2"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <strong>Horário de atendimento</strong>
+            </div>
+            <p class="hours-range">09h às 18h</p>
+            <div class="hours-days">
+              <span class="day-pill closed">Dom</span>
+              <span class="day-pill closed">Seg</span>
+              <span class="day-pill">Ter</span>
+              <span class="day-pill">Qua</span>
+              <span class="day-pill">Qui</span>
+              <span class="day-pill">Sex</span>
+              <span class="day-pill">Sáb</span>
+            </div>
+          </div>
+
+          <p class="location-item location-tag">
+            Fácil acesso, com vaga para deixar o carro por perto
+          </p>
+        </div>
+        <div class="location-map reveal">
+          <iframe
+            title="Mapa do studio em Pedro Leopoldo"
+            src="https://maps.google.com/maps?q=Rua+Alfredo+Barbosa%2C+164+-+Bairro+Felipe+Cl%C3%A1udio%2C+Pedro+Leopoldo+-+MG&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="320"
+            style="border: 0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+          <a
+            class="map-link"
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Alfredo+Barbosa%2C+164+-+Bairro+Felipe+Cl%C3%A1udio%2C+Pedro+Leopoldo+-+MG"
+            target="_blank"
+            rel="noopener"
+          >
+            Ver rota no Google Maps →
+          </a>
+        </div>
+      </section>
+
+      <section id="contato" class="booking">
+        <p class="eyebrow-label center">Vamos agendar</p>
+        <h2 class="section-title center">Consulte seu horário</h2>
+        <p class="booking-sub center">
+          Preencha os dados abaixo. Você será direcionado ao WhatsApp com sua
+          mensagem pronta.
+        </p>
+
+        <form id="bookingForm" class="booking-form reveal" novalidate>
+          <div class="form-group">
+            <label for="nomeCompleto">Nome completo</label>
+            <input
+              type="text"
+              id="nomeCompleto"
+              name="nomeCompleto"
+              placeholder="Seu nome"
+            />
+            <span class="form-alert" data-alert-for="nomeCompleto"
+              >Preencha seu nome completo.</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label
+              >Serviços desejados
+              <span class="label-hint">(selecione um ou mais)</span></label
+            >
+            <div class="chip-scroller hide-scrollbar" id="serviceChips">
+              <button
+                type="button"
+                class="chip"
+                data-service="Designer de Sobrancelhas"
+              >
+                Designer de Sobrancelhas
+              </button>
+              <button
+                type="button"
+                class="chip"
+                data-service="Designer com Henna"
+              >
+                Designer com Henna
+              </button>
+              <button
+                type="button"
+                class="chip"
+                data-service="Micropigmentação de Sobrancelhas"
+              >
+                Micropigmentação de Sobrancelhas
+              </button>
+              <button
+                type="button"
+                class="chip"
+                data-service="Micropigmentação Labial"
+              >
+                Micropigmentação Labial
+              </button>
+              <button
+                type="button"
+                class="chip"
+                data-service="Sessão de Remoção a Laser"
+              >
+                Sessão de Remoção a Laser
+              </button>
+            </div>
+            <input
+              type="hidden"
+              id="servicosDesejados"
+              name="servicosDesejados"
+            />
+            <span class="form-alert" data-alert-for="servicosDesejados"
+              >Selecione ao menos um serviço.</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Dia da semana</label>
+            <div class="day-scroller hide-scrollbar" id="dayScroller">
+              <button type="button" class="day-chip" data-day="Terça">
+                Terça
+              </button>
+              <button type="button" class="day-chip" data-day="Quarta">
+                Quarta
+              </button>
+              <button type="button" class="day-chip" data-day="Quinta">
+                Quinta
+              </button>
+              <button type="button" class="day-chip" data-day="Sexta">
+                Sexta
+              </button>
+              <button type="button" class="day-chip" data-day="Sábado">
+                Sábado
+              </button>
+            </div>
+            <input type="hidden" id="diaSemana" name="diaSemana" />
+            <span class="form-alert" data-alert-for="diaSemana"
+              >Escolha um dia.</span
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            id="submitBooking"
+          >
+            <span class="btn-text">Consultar Horários no WhatsApp</span>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Camila Estética — Rua Alfredo Barbosa, 164, Pedro Leopoldo - MG</p>
+      <p class="footer-fine">Terça a Sábado · 09h às 18h</p>
+    </footer>
+
+    <div class="sticky-cta" id="stickyCta">
+      <a href="#contato" class="btn btn-primary btn-block"
+        >Agendar meu horário</a
+      >
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
