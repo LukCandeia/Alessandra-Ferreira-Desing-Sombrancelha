@@ -1,10 +1,9 @@
 // ==== CONFIG ====
-const WHATSAPP_NUMBER = "5531900000000"; // <-- ALTERE AQUI: número com DDI+DDD, só números
+const WHATSAPP_NUMBER = "5531971744412"; // <-- ALTERE AQUI: número com DDI+DDD, só números
 
 // ==== MENU MOBILE ====
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
-
 menuToggle.addEventListener("click", () => {
   const isOpen = mainNav.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", isOpen);
@@ -84,7 +83,7 @@ function validateBooking(data) {
 
 function buildWhatsappMessage({ nomeCompleto, servicosDesejados, diaSemana }) {
   return [
-    "Olá! Gostaria de agendar um horário. 💛",
+    "Olá! Gostaria de agendar um horário.",
     "",
     `*Nome:* ${nomeCompleto}`,
     `*Serviços:* ${servicosDesejados}`,
