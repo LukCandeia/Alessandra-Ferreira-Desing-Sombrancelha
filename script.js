@@ -1,5 +1,5 @@
 // ==== CONFIG ====
-const WHATSAPP_NUMBER = "5531971744412"; // <-- ALTERE AQUI: número com DDI+DDD, só números
+const WHATSAPP_NUMBER = "5531971744412";
 
 // ==== MENU MOBILE ====
 const menuToggle = document.getElementById("menuToggle");
@@ -37,10 +37,8 @@ function closeLightbox() {
 if (galleryGrid) {
   galleryGrid.querySelectorAll(".gallery-item").forEach((item) => {
     item.addEventListener("click", () => {
-      const fullSrc =
-        item.getAttribute("data-full") || item.querySelector("img").src;
-      const alt = item.querySelector("img").alt;
-      openLightbox(fullSrc, alt);
+      const img = item.querySelector("img");
+      openLightbox(img.currentSrc || img.src, img.alt);
     });
   });
 }
